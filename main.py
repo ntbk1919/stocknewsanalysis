@@ -49,6 +49,7 @@ mean_df = df.groupby(['ticker','date']).mean()
 mean_df=mean_df.unstack()
 mean_df=mean_df.xs('compound',axis='columns').transpose()
 mean_df.plot(kind='bar')
+plt.savefile('plot.png')#Always save file before plt.show() ,which creates a blank image.
 plt.show()
 
 print(mean_df)
